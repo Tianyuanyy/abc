@@ -12,6 +12,8 @@ git commit
 
 每次提交要说明修改的内容
 
+改名 mv 旧名字 新名字
+
 第四课
 
 比较
@@ -22,11 +24,31 @@ git diff --staged  暂存区 vs 仓库
 
 历史
 
-git log 
+git log
 
 \--oneline   --graph
 
 详情
 
 git show
+
+第五课
+
+撤回
+
+git restore 撤销工作区改动
+
+git restore --staged 暂存区撤回工作区
+
+git commit --amend 修改最后一条提交
+
+git reset 撤销
+
+\--soft 暂存区保留，工作区保留  提交漏了文件或提交信息想重写，不想用amend
+
+\--mix（默认）head\~1 暂存区重置，工作区保留
+
+\--hard 暂存区重置，工作区重置，彻底丢失
+
+git revert 新提交一次，用在已推送的提交中
 
