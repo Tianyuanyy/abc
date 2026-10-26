@@ -68,5 +68,13 @@ git branch -m old-name new-name 重命名
 
 git branch -d 删除   -D 强制删除
 
+合并
+
 git merge 合并，需要先切换到main
+
+git merge --no-ff 不快速合并，在lg中体现曾有分支，而不是直线
+
+git merge --abort 合并出问题后放弃
+
+git merge --squash fenzhi 把分支所有改动压成一台条待提交改动
 
