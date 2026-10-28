@@ -78,3 +78,38 @@ git merge --abort 合并出问题后放弃
 
 git merge --squash fenzhi 把分支所有改动压成一台条待提交改动
 
+第七课
+冲突的解决
+git status之后打开冲突的文件修改
+# 学习笔记
+
+今天学了 Git 的分支操作。
+
+<<<<<<< HEAD
+分支在 Git 里成本很低，可以放心多用。（现在分支）
+=======
+每个功能都应该开一个独立的 feature 分支。（要合并分支）
+>>>>>>> feature/branch-notes
+
+git add <file>
+git commit 
+
+如果不想合并了
+git merge --abort
+
+第八课
+忽略跟踪文件的规则文件 .gitignore
+写法	含义
+*.log	匹配任意层级的 .log 文件
+/dist/	只匹配仓库根目录下的 dist 目录
+dist/	匹配任意层级的 dist 目录
+**/temp	任意层级（** 显式表示多层）
+!important.log	反向例外：不忽略这个文件
+doc/*.md	* 不跨目录，只匹配 doc 的直接子文件
+doc/**/*.md	匹配 doc 下任意深度的 md
+# 注释	注释行
+空行	忽略
+
+
+
+

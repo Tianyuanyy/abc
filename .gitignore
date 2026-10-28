@@ -1,0 +1,28 @@
+#忽略跟踪规定
+# 临时与备份文件
+*.tmp
+*.bak
+~$*.xlsx
+~$*.docx
+~$*.csv
+*.swp
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 编辑器
+.idea/
+.vscode/
+
+# 导出产物
+/export/
+/build/
+
+#反向例外情况
+*.log           # 先忽略所有 log
+!keep.log       # 再放行这个（顺序正确）
+
+dist/*
+!dist/keep.txt
