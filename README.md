@@ -149,3 +149,7 @@ git remote -v
 git push -u origin main
 
 以后直接 git push、git pull 就可以了，不用每次写 origin main。
+
+
+
+12341234
