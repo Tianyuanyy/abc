@@ -149,3 +149,6 @@ git remote -v
 git push -u origin main
 
 以后直接 git push、git pull 就可以了，不用每次写 origin main。
+
+git branch -vv   # 本地分支及其上游（最有用的一个）
+* main 1613092 [origin/main] docs:forget2
