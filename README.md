@@ -150,5 +150,9 @@ git push -u origin main
 
 以后直接 git push、git pull 就可以了，不用每次写 origin main。
 
+第十课
+pull = fetch + merge
+git fetch：把远程的最新提交下载到本地，但不改动你的工作区和当前分支。它只更新 origin/main 这个指针
+
 git branch -vv   # 本地分支及其上游（最有用的一个）
 * main 1613092 [origin/main] docs:forget2
