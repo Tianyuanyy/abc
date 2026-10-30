@@ -110,6 +110,42 @@ doc/**/*.md	匹配 doc 下任意深度的 md
 # 注释	注释行
 空行	忽略
 
+第九课
+建立ssh
+# 1. 生成密钥对（ed25519 是当前推荐算法）
+ssh-keygen -t ed25519 -C "你的邮箱"
 
+# 提示 Enter file in which to save the key 时，直接回车，用默认路径
+# 提示 Enter passphrase 时，可以留空（方便），也可以设置（更安全，但每次用要输）
 
+# 2. 查看生成的文件
+ls ~/.ssh
+# 应该看到：id_ed25519（私钥，绝不外传）和 id_ed25519.pub（公钥）
 
+# 3. 复制公钥内容
+cat ~/.ssh/id_ed25519.pub
+# 输出形如：ssh-ed25519 AAAAC3NzaC1lZDI1NTE5... 你的邮箱
+
+# 4. 打开平台设置页，粘贴公钥
+#    GitHub: Settings → SSH and GPG keys → New SSH key
+#    Gitee:  设置 → SSH 公钥 → 添加公钥
+#    标题随便取（如 "我的笔记本"），Key 处粘贴刚复制的内容
+
+# 5. 验证
+ssh -T git@github.com       # GitHub
+ssh -T git@gitee.com        # Gitee
+
+仓库建立追踪关系 git remote
+# 1. 关联远程仓库，命名为 origin
+git remote add origin git@github.com:yourname/git-lab.git
+
+# 2. 确认关联成功
+git remote -v
+# 输出：
+# origin  git@github.com:yourname/git-lab.git (fetch)
+# origin  git@github.com:yourname/git-lab.git (push)
+
+# 3. 推送本地 main 分支，并建立追踪关系
+git push -u origin main
+
+以后直接 git push、git pull 就可以了，不用每次写 origin main。
