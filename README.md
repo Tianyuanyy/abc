@@ -156,3 +156,38 @@ git fetch：把远程的最新提交下载到本地，但不改动你的工作�
 
 git branch -vv   # 本地分支及其上游（最有用的一个）
 * main 1613092 [origin/main] docs:forget2
+
+冲突的解决和merge一样
+
+第十一课
+团队协作规范
+一个md文件
+观察  grist
+
+第十二课
+stash 临时保存未完成的改动-工作区
+git stash push -m "企业清单导入：表单校验写到一半"
+git stash pop                     # 取出最近的，并从栈中删除
+git stash apply                   # 取出但保留在栈中（可以反复 apply）
+git stash drop stash@{0}          # 删除指定的一条
+git stash clear                   # 清空全部（危险，不可恢复）
+
+ cherry-pick 在分支之间搬运指定提交 产生的是新提交
+# 把 main 上的那一条提交搬过来
+git cherry-pick a1b2c3d
+冲突
+--abort
+--continue
+
+merge vs rebase（一条直线，被搬动的提交哈希全部改变）
+未推送的提交上，用git rebase -i  这是整理历史的利器
+冲突
+--abort
+--continue
+
+git tag 打标签
+# 轻量标签（只是一个指向提交的引用）
+git tag v1.0.0
+
+# 附注标签（包含打标签的人、时间、说明 —— 发布版本应该用这个）
+git tag -a v1.0.0 -m "首个正式版本：完成企业清单导入与导出"
