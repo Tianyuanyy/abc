@@ -191,3 +191,28 @@ git tag v1.0.0
 
 # 附注标签（包含打标签的人、时间、说明 —— 发布版本应该用这个）
 git tag -a v1.0.0 -m "首个正式版本：完成企业清单导入与导出"
+
+第十三课 后悔药
+git reflog 查看head变动的哈希
+回到位置 
+git reset --hard 哈希  放弃之后的改动（尽量不用）
+新建分支指向它
+git branch rescue 哈希
+git switch rescue（不动当前状态，确认没问题了再处理）
+
+救援场景一：误 reset --hard 丢掉了提交
+救援场景二：误删了分支
+救援场景三：rebase 或 merge 做乱了
+都可以先git reflog 再git branch 或reset --hard
+
+git bisect：二分定位问题提交
+上周还好好的功能，现在坏了。中间有 80 条提交，不知道是哪一条引入的。
+git blame <file>   每一行的提交
+git show 哈希  完整的改动和提交信息
+git log -S"某个函数名" 找出「增删该字符串」的提交
+
+敏感信息删除
+第一步永远是：更换密钥。 这一条优先级最高，任何清理动作都不能替代它。
+
+然后是清理历史。工具：
+推荐：git filter-repo
